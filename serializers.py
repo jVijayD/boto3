@@ -1,24 +1,36 @@
 from rest_framework import serializers
 
 
-class ec2(serializers.Serializer):
-    Name = serializers.CharField(
+class eb(serializers.Serializer):
+    VolumeId = serializers.CharField(
         required=False,
         allow_null=True
     )
-    ImageId = serializers.CharField(
+    VolumeType = serializers.CharField(
         required=False,
         allow_null=True
     )
-    SnapshotId = serializers.CharField(
+    Size = serializers.JSONField(
         required=False,
         allow_null=True
     )
-    InstanceId = serializers.JSONField(
+    CreateTime = serializers.DateTimeField(
+        required=False,
+        allow_null=True
+    )
+    AvailabilityZone = serializers.CharField(
         required=False,
         allow_null=True
     )
     region = serializers.CharField(
+        required=False,
+        allow_null=True
+    )
+    State = serializers.CharField(
+        required=False,
+        allow_null=True
+    )
+    InstanceId = serializers.CharField(
         required=False,
         allow_null=True
     )
