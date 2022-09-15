@@ -1,24 +1,25 @@
 from rest_framework import serializers
 
 
-class ec2(serializers.Serializer):
-    Name = serializers.CharField(
+class sn(serializers.Serializer):
+    TopicArn = serializers.CharField(
         required=False,
         allow_null=True
     )
-    ImageId = serializers.CharField(
+    region = serializers.JSONField(
         required=False,
         allow_null=True
     )
-    SnapshotId = serializers.CharField(
+    SubscriptionArn = serializers.CharField(
         required=False,
         allow_null=True
     )
-    InstanceId = serializers.JSONField(
+    Protocol = serializers.CharField(
         required=False,
         allow_null=True
     )
-    region = serializers.CharField(
+    Endpoint = serializers.CharField(
         required=False,
         allow_null=True
     )
+
